@@ -1,7 +1,7 @@
 # FlappyBird
 Flappy Bird Clone in Java Processing
 
-## https://www.youtube.com/user/CbX397/videos
+## https://youtu.be/UIlzIwqmOYE
 
 
 ![flappy](flappy.jpg)
