@@ -1,21 +1,21 @@
 PImage backpic, birdpic, wallpic, welcomescreen;
 int game, score, highscore, x, y, vertical, wallx[] = new int[2], wally[] =new int[2];
 void setup() {
-   backpic =loadImage("https://raw.githubusercontent.com/Gaspared/FlappyBird/main/img/back.png");
-   birdpic =loadImage("https://raw.githubusercontent.com/Gaspared/FlappyBird/main/img/bird.png");
-   wallpic =loadImage("https://raw.githubusercontent.com/Gaspared/FlappyBird/main/img/wall.png");
-   welcomescreen=loadImage("https://raw.githubusercontent.com/Gaspared/FlappyBird/main/img/start.png");
-   game = 1; score = 0; highscore = 0; x = -200; vertical = 0; 
+   backpic =loadImage("D:/Github/FlappyBird/img/back.png");
+   birdpic =loadImage("D:/Github/FlappyBird/img/bird.png");
+   wallpic =loadImage("D:/Github/FlappyBird/img/wall.png");
+   welcomescreen=loadImage("D:/Github/FlappyBird/img/start.png");
+   game = 1; score = 0; highscore = 0; x = -200; vertical = 0;
   size(600,800);
   fill(0,0,0);
-  textSize(20);  
+  textSize(20);
 }
-void draw() { 
+void draw() {
   if(game == 0) {
     imageMode(CORNER);
     image(backpic, x, 0);
     image(backpic, x+backpic.width, 0);
-    x -= 5;
+    x -= 4;
     vertical += 1;
     y += vertical;
     if(x == -1800) x = 0;
@@ -29,7 +29,7 @@ void draw() {
       }
       if(wallx[i] == width/2) highscore = max(++score, highscore);
       if(y>height||y<0||(abs(width/2-wallx[i])<25 && abs(y-wally[i])>100)) game=1;
-      wallx[i] -= 6;
+      wallx[i] -= 4;
     }
     image(birdpic, width/2, y);
     text("Score: "+score, 10, 20);
@@ -41,7 +41,7 @@ void draw() {
   }
 }
 void mousePressed() {
-  vertical = -15;
+  vertical = -14;
   if(game==1) {
     wallx[0] = 600;
     wally[0] = y = height/2;
